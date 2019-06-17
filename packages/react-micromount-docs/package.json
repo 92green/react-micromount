@@ -1,0 +1,29 @@
+{
+  "name": "react-micromount-docs",
+  "description": "React Micromount docs",
+  "private": true,
+  "version": "0.0.0",
+  "author": "Damien Clarke",
+  "dependencies": {
+    "dcme-gatsby": "^0.2.0",
+    "dcme-style": "^0.27.0",
+    "gatsby": "^2.0.19",
+    "react-micromount": "file:.yalc/react-micromount"
+  },
+  "keywords": [
+    "react-micromount"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "watch": "gatsby develop",
+    "yalc-update": "../../node_modules/.bin/yalc update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blueflag/react-micromount"
+  },
+  "devDependencies": {
+    "babel-preset-blueflag": "^1.0.0"
+  }
+}

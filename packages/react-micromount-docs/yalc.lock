@@ -1,0 +1,9 @@
+{
+  "version": "v1",
+  "packages": {
+    "react-micromount": {
+      "signature": "152a6a4673db6b21b4117ee480126526",
+      "file": true
+    }
+  }
+}

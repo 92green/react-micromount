@@ -1,0 +1,50 @@
+{
+  "name": "react-micromount",
+  "version": "0.0.0",
+  "description": "...",
+  "main": "lib/MicroMount.js",
+  "license": "MIT",
+  "author": "Damien Clarke",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueflag/react-micromount.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blueflag/react-micromount/issues"
+  },
+  "files": [
+    "lib"
+  ],
+  "private": false,
+  "scripts": {
+    "yalc-publish": "../../node_modules/.bin/yalc publish --push --force",
+    "build": "rm -rf lib && NODE_ENV=production babel src --out-dir lib --ignore '**/__tests__/*.js' && yarn yalc-publish",
+    "build-all": "yarn build",
+    "flow": "blueflag-test flow",
+    "flow-coverage": "blueflag-test flow-coverage",
+    "lint": "blueflag-test lint",
+    "test": "yarn jest",
+    "test-all": "yarn test && yarn lint && yarn flow && yarn flow-coverage",
+    "view-coverage": "yarn run coverage; open ./coverage/lcov-report/index.html",
+    "watch": "yarn run build -w"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "load-js": "^3.0.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@testing-library/react": "^8.0.1",
+    "babel-plugin-extract-flow-types": "^1.0.0",
+    "babel-preset-blueflag": "^1.0.0",
+    "blueflag-test": "^0.22.0",
+    "react": "^16.9.0-alpha",
+    "react-dom": "^16.9.0-alpha",
+    "react-hooks-testing-library": "^0.5.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}
