@@ -1,7 +1,7 @@
 {
   "name": "react-micromount",
   "version": "0.0.0",
-  "description": "...",
+  "description": "Mount react instances inside each other like they're components",
   "main": "lib/MicroMount.js",
   "license": "MIT",
   "author": "Damien Clarke",
