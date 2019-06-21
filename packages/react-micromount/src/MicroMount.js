@@ -1,7 +1,6 @@
 // @flow
-
-// @flow
 import type {Node as ReactNode} from 'react';
+
 import React from 'react';
 // $FlowFixMe
 import {useEffect} from 'react';
@@ -70,7 +69,7 @@ export default function MicroMount(props: Props): ReactNode {
         return () => {
             // unmount the mount object at the url that was received from props
             // at the time that the main useEffect callback was called
-            let mountObjectFromStore = window["reactMicromountMap"][url];
+            let mountObjectFromStore = (window["reactMicromountMap"] || {})[url];
             if(mountObjectFromStore) {
                 mountObjectFromStore.unmount(containerRef.current);
             }
@@ -81,7 +80,7 @@ export default function MicroMount(props: Props): ReactNode {
     // TODO, call mountObject.update with prop changes if it exists
 
     return <div>
-        <div ref={containerRef} />
+        <div ref={containerRef} data-testid="micromount-container" />
         {showLoadingState && fallback}
     </div>;
 }
