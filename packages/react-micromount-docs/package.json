@@ -2,7 +2,7 @@
   "name": "react-micromount-docs",
   "description": "React Micromount docs",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.1.0",
   "author": "Damien Clarke",
   "dependencies": {
     "dcme-gatsby": "^0.2.0",
