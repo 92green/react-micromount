@@ -41,7 +41,7 @@ import MicroMount from 'react-micromount';
 Mountables are the Javascript files that react-micromount can mount. They look like this:
 
 ```js
-window["reactMicromountResult"] = {
+window["reactMicromounts"] = (window["reactMicromounts"] || []).push({
     mount: (container, props) => {
         // mount your micro-frontend
         // e.g. if you're using React...
@@ -54,7 +54,7 @@ window["reactMicromountResult"] = {
 
         ReactDOM.unmountComponentAtNode(container);
     }
-};
+});
 
 ```
 
@@ -82,7 +82,7 @@ Non-sandboxed micro-frontends like the ones react-micromount allows can potentia
 
 The app and its mountables must **always** agree on:
 - The shape of their API used for mounting
- - In this case `window["reactMicromountResult"] = {mount(container, props), umnount(container)}`
+ - In this case `window["reactMicromounts"] = ...` described above
 - The shape of their API for passing data
   - In this case all props that are passed in, and if you're passing functions then all parameters and return values
   - Even the versions of special data structures and classes! In future react-micromount will only accept `JSON.stringify`-able data types by default as protection against these kinds of problems.

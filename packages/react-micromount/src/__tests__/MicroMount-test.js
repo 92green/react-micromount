@@ -12,7 +12,7 @@ afterEach(() => {
 
     // delete globals
     delete window["reactMicromountChain"];
-    delete window["reactMicromountResult"];
+    delete window["reactMicromounts"];
     delete window["reactMicromountMap"];
 
     loadJsMock.mockReset();
@@ -40,7 +40,7 @@ describe('MicroMount', () => {
         loadJsMock
             .mockImplementation(() => {
                 // simulate load-js loading a react-micromount mountable
-                window["reactMicromountResult"] = mountable;
+                window["reactMicromounts"] = [mountable];
                 return Promise.resolve();
             });
 
@@ -68,7 +68,7 @@ describe('MicroMount', () => {
         loadJsMock
             .mockImplementationOnce(() => {
                 // simulate load-js loading a react-micromount mountable
-                window["reactMicromountResult"] = mountable;
+                window["reactMicromounts"] = [mountable];
                 return Promise.resolve();
             })
             .mockImplementationOnce(() => {
@@ -109,7 +109,7 @@ describe('MicroMount', () => {
         loadJsMock
             .mockImplementation(() => {
                 // simulate load-js loading a react-micromount mountable
-                window["reactMicromountResult"] = mountable;
+                window["reactMicromounts"] = [mountable];
                 return Promise.resolve();
             });
 
@@ -145,7 +145,7 @@ describe('MicroMount', () => {
         loadJsMock
             .mockImplementation(() => {
                 // simulate load-js loading a react-micromount mountable
-                window["reactMicromountResult"] = mountable;
+                window["reactMicromounts"] = [mountable];
                 return promise; // non-resolving promise
             });
 
