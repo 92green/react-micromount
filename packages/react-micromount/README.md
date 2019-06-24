@@ -41,7 +41,8 @@ import MicroMount from 'react-micromount';
 Mountables are the Javascript files that react-micromount can mount. They look like this:
 
 ```js
-window["reactMicromounts"] = (window["reactMicromounts"] || []).push({
+window["reactMicromounts"] = window["reactMicromounts"] || [];
+window["reactMicromounts"].push({
     mount: (container, props) => {
         // mount your micro-frontend
         // e.g. if you're using React...
