@@ -45,8 +45,7 @@ export default function MicroMount(props: Props): ReactNode {
             .then(() => {
                 // collect result from window if it has been placed there
                 // it wont be there if the script was loaded in a previous mount
-                let result: ?MicroMountObject = window["reactMicromountResult"];
-                delete window["reactMicromountResult"];
+                let result: ?MicroMountObject = (window["reactMicromounts"] || []).shift();
 
                 // create and possibly update a global map of mount results by their urls
                 window["reactMicromountMap"] = (window["reactMicromountMap"] || {});
