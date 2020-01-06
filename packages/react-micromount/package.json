@@ -7,10 +7,10 @@
   "author": "Damien Clarke",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blueflag/react-micromount.git"
+    "url": "git+https://github.com/92green/react-micromount.git"
   },
   "bugs": {
-    "url": "https://github.com/blueflag/react-micromount/issues"
+    "url": "https://github.com/92green/react-micromount/issues"
   },
   "files": [
     "lib"
@@ -46,5 +46,15 @@
   "peerDependencies": {
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
-  }
+  },
+  "tags": [
+    "react",
+    "micromount",
+    "mount",
+    "code",
+    "split",
+    "microservice",
+    "front end",
+    "multiple versions"
+  ]
 }
